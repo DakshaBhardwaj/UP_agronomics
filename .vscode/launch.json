@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Engine (agri_engine.py)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/agri_engine.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "python": "${workspaceFolder}/my_venv2/Scripts/python.exe"
+    },
+    {
+      "name": "Streamlit Dashboard",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "streamlit",
+      "args": ["run", "${workspaceFolder}/agri_dashboard_final.py"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "python": "${workspaceFolder}/my_venv2/Scripts/python.exe"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Engine + Dashboard",
+      "configurations": ["Run Engine (agri_engine.py)", "Streamlit Dashboard"],
+      "stopAll": true
+    }
+  ]
+}
